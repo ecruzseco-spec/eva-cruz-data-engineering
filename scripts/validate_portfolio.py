@@ -65,6 +65,7 @@ def parse_pass_total(output: str) -> tuple[int, int]:
 def main() -> None:
     clean_generated_outputs()
     EVIDENCE.mkdir(parents=True, exist_ok=True)
+    (ROOT / "tmp").mkdir(parents=True, exist_ok=True)
 
     pytest_result = run([
         sys.executable,
