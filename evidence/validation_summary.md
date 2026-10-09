@@ -9,7 +9,7 @@
 - dbt normal: **39/39 aprobados**
 - dbt negativo: **fallo esperado detectado** en las relaciones de cliente y fecha
 - dbt restauración final: **39/39 aprobados**
-- GitHub Actions: **preparado, todavía no ejecutado en GitHub**
+- GitHub Actions: **validación aprobada el 9 de octubre de 2026**; consulta el historial en la pestaña Actions.
 
 ## Resultado del pipeline
 

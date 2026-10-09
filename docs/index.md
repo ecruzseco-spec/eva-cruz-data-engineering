@@ -27,8 +27,8 @@ Un modelo dimensional con staging, dimensiones, hechos, métricas, documentació
 
 - Código Python y SQL legible y versionable.
 - Datos sintéticos reproducibles.
-- Pruebas automatizadas y CI preparado.
+- Pruebas automatizadas y CI aprobado en GitHub Actions.
 - Diagramas, diccionario y decisiones documentadas.
-- Resultados locales fechados, sin afirmar ejecuciones remotas inexistentes.
+- Resultados locales fechados y validación remota comprobada en GitHub Actions.
 
 [Repositorio principal]({{ site.github.repository_url }}) · [Guía para entrevista]({{ site.baseurl }}/interview_guide.html) · [Asistencia y autoría]({{ site.github.repository_url }}/blob/main/ASSISTANCE.md)

@@ -81,7 +81,7 @@ Ese comando **debe fallar** en dos pruebas `relationships`; después ejecuta otr
 - dbt-duckdb: probado localmente, incluyendo un fallo negativo esperado y restauración.
 - DAG de Airflow: preparado y validado sintácticamente; Airflow no se instaló ni ejecutó.
 - Azure Data Factory, Databricks y Synapse: diseño documentado; no desplegado ni probado en Azure.
-- GitHub Actions: flujo preparado; no se afirma que pasó hasta publicarlo y observar una ejecución real.
+- GitHub Actions: validación aprobada el 9 de octubre de 2026; consulta el historial en la pestaña Actions.
 - Eliminaciones de negocio: fuera de alcance. El pipeline solo procesa altas y modificaciones; una versión tardía anterior a la vigente se rechaza como `LATE_STALE_VERSION`.
 
 ## Diseño y documentación

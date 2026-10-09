@@ -1,6 +1,6 @@
 # Publicación segura y manifiesto público
 
-No se ha creado una cuenta, repositorio público, GitHub Pages ni conexión con Get on Board. La postulación permanece pendiente.
+Estado al 9 de octubre de 2026: repositorio público, CI y GitHub Pages activos. La conexión con Get on Board y la postulación siguen pendientes. Los pasos siguientes documentan la preparación original.
 
 ## Contenido que se propone publicar
 
