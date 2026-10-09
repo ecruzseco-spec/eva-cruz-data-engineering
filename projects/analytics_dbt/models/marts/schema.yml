@@ -1,0 +1,51 @@
+version: 2
+
+models:
+  - name: dim_customer
+    description: "Dimensión de cliente sintético. Grano: una fila por customer_id."
+    columns:
+      - name: customer_key
+        description: "Clave sustituta estable derivada de customer_id."
+        data_tests: [not_null, unique]
+      - name: customer_id
+        data_tests: [not_null, unique]
+
+  - name: dim_date
+    description: "Dimensión calendario observada. Grano: una fila por fecha con transacciones."
+    columns:
+      - name: date_key
+        data_tests: [not_null, unique]
+      - name: full_date
+        data_tests: [not_null, unique]
+
+  - name: fct_transactions
+    description: "Hechos de transacción aceptados. Grano: una fila por transaction_id en su última versión."
+    columns:
+      - name: transaction_id
+        data_tests: [not_null, unique]
+      - name: customer_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_customer')
+                field: customer_key
+      - name: date_key
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: date_key
+      - name: amount
+        data_tests: [not_null]
+      - name: currency
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["MXN", "USD"]
+      - name: status
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["COMPLETED", "PENDING", "REFUNDED"]

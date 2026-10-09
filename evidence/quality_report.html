@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reporte de calidad - Portafolio</title>
+<style>
+body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;max-width:1100px;margin:2rem auto;padding:0 1rem;color:#172033}
+h1,h2{color:#12355b} .notice{background:#eef6ff;border-left:5px solid #1f6feb;padding:1rem}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin:1.5rem 0}
+.card{border:1px solid #d8dee8;border-radius:10px;padding:1rem} .value{font-size:1.7rem;font-weight:700;color:#0b6e4f}
+table{border-collapse:collapse;width:100%;margin:1rem 0 2rem} th,td{border:1px solid #d8dee8;padding:.55rem;text-align:left}
+th{background:#12355b;color:#fff} tbody tr:nth-child(even){background:#f6f8fa} code{background:#f1f3f5;padding:.1rem .3rem}
+</style></head><body>
+<h1>Reporte de calidad del pipeline</h1>
+<p class="notice"><strong>Demostración de portafolio.</strong> Todos los datos son sintéticos. No representa una implementación productiva.</p>
+<p>Generado por una ejecución local real: <code>2026-10-08T12:04:55-06:00</code>.</p>
+<div class="cards">
+  <div class="card"><div>Registros curated</div><div class="value">8</div></div>
+  <div class="card"><div>Importe curated</div><div class="value">1312.90</div></div>
+  <div class="card"><div>Marca de avance</div><div>2026-09-06 09:01:00</div></div>
+</div>
+<h2>Bitácora de lotes</h2>
+<table><thead><tr><th>Lote</th><th>Intento</th><th>Estado</th><th>Origen</th><th>Aceptados</th><th>Rechazados</th><th>Altas</th><th>Cambios</th><th>Sin cambio</th></tr></thead><tbody><tr><td>batch_001</td><td>1</td><td>COMPLETED</td><td>5</td><td>5</td><td>0</td><td>5</td><td>0</td><td>0</td></tr><tr><td>batch_002</td><td>1</td><td>COMPLETED</td><td>8</td><td>3</td><td>5</td><td>2</td><td>1</td><td>0</td></tr><tr><td>batch_003_recovery</td><td>1</td><td>FAILED</td><td>2</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>batch_003_recovery</td><td>2</td><td>COMPLETED</td><td>2</td><td>2</td><td>0</td><td>1</td><td>1</td><td>0</td></tr><tr><td>batch_001</td><td>2</td><td>SKIPPED_ALREADY_COMPLETED</td><td>5</td><td>0</td><td>0</td><td>0</td><td>0</td><td>5</td></tr></tbody></table>
+<h2>Conciliación</h2>
+<table><thead><tr><th>Lote</th><th>Origen</th><th>Aceptados</th><th>Rechazados</th><th>Importe origen</th><th>Importe aceptado</th><th>Importe rechazado</th><th>Diferencia</th><th>Balanceado</th></tr></thead><tbody><tr><td>batch_001</td><td>5</td><td>5</td><td>0</td><td>1001.25</td><td>1001.25</td><td>0.00</td><td>0.00</td><td>True</td></tr><tr><td>batch_002</td><td>8</td><td>3</td><td>5</td><td>596.90</td><td>406.90</td><td>190.00</td><td>0.00</td><td>True</td></tr><tr><td>batch_003_recovery</td><td>2</td><td>2</td><td>0</td><td>230.00</td><td>230.00</td><td>0.00</td><td>0.00</td><td>True</td></tr></tbody></table>
+<h2>Motivos de rechazo</h2>
+<table><thead><tr><th>Motivo(s)</th><th>Registros</th></tr></thead><tbody><tr><td>AMOUNT_NOT_POSITIVE</td><td>1</td></tr><tr><td>DUPLICATE_IN_BATCH</td><td>1</td></tr><tr><td>INVALID_CURRENCY|INVALID_STATUS</td><td>1</td></tr><tr><td>INVALID_TRANSACTION_DATE</td><td>1</td></tr><tr><td>REQUIRED_CUSTOMER_ID</td><td>1</td></tr></tbody></table>
+</body></html>

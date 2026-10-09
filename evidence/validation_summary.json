@@ -1,0 +1,145 @@
+{
+  "generated_at": "2026-10-08T12:06:10-06:00",
+  "scope": "Ejecución local sobre datos 100% sintéticos",
+  "environment": {
+    "python": "3.12.10",
+    "duckdb": "1.5.6",
+    "dbt_core": "1.12.5",
+    "operating_system": "Windows",
+    "clean_readme_setup": "PASS"
+  },
+  "pytest": {
+    "passed": 6,
+    "total": 6,
+    "skipped": 0,
+    "status": "PASS"
+  },
+  "pipeline": {
+    "simulated_failure_detected": "SIMULATED_FAILURE_AFTER_VALIDATION",
+    "completed_runs": [
+      {
+        "run_id": "76aabe5c-1cc8-4c60-9656-6b400e451b9f",
+        "batch_id": "batch_001",
+        "status": "COMPLETED",
+        "source_count": 5,
+        "accepted_count": 5,
+        "rejected_count": 0,
+        "inserted_count": 5,
+        "updated_count": 0,
+        "unchanged_count": 0,
+        "reconciliation_balanced": true
+      },
+      {
+        "run_id": "3a45d8ab-b715-4e07-b930-aa7e12bc02f0",
+        "batch_id": "batch_002",
+        "status": "COMPLETED",
+        "source_count": 8,
+        "accepted_count": 3,
+        "rejected_count": 5,
+        "inserted_count": 2,
+        "updated_count": 1,
+        "unchanged_count": 0,
+        "reconciliation_balanced": true
+      },
+      {
+        "run_id": "366d9b42-4cfd-433c-944d-28ebb83bf891",
+        "batch_id": "batch_003_recovery",
+        "status": "COMPLETED",
+        "source_count": 2,
+        "accepted_count": 2,
+        "rejected_count": 0,
+        "inserted_count": 1,
+        "updated_count": 1,
+        "unchanged_count": 0,
+        "reconciliation_balanced": true
+      },
+      {
+        "run_id": "e97a8b03-2ae4-48cc-98e0-427a1c125496",
+        "batch_id": "batch_001",
+        "status": "SKIPPED_ALREADY_COMPLETED",
+        "source_count": 5,
+        "accepted_count": 0,
+        "rejected_count": 0,
+        "inserted_count": 0,
+        "updated_count": 0,
+        "unchanged_count": 5,
+        "reconciliation_balanced": true
+      }
+    ],
+    "raw_count": 15,
+    "curated_count": 8,
+    "curated_amount": "1312.90",
+    "rejected_count": 5,
+    "failed_runs_expected": 1,
+    "unbalanced_reconciliations": 0,
+    "reconciliations": [
+      {
+        "batch_id": "batch_001",
+        "source_count": 5,
+        "accepted_count": 5,
+        "rejected_count": 0,
+        "amount_difference": "0.00",
+        "is_balanced": true
+      },
+      {
+        "batch_id": "batch_002",
+        "source_count": 8,
+        "accepted_count": 3,
+        "rejected_count": 5,
+        "amount_difference": "0.00",
+        "is_balanced": true
+      },
+      {
+        "batch_id": "batch_003_recovery",
+        "source_count": 2,
+        "accepted_count": 2,
+        "rejected_count": 0,
+        "amount_difference": "0.00",
+        "is_balanced": true
+      }
+    ],
+    "rejection_reasons": [
+      {
+        "reason_codes": "AMOUNT_NOT_POSITIVE",
+        "count": 1
+      },
+      {
+        "reason_codes": "DUPLICATE_IN_BATCH",
+        "count": 1
+      },
+      {
+        "reason_codes": "INVALID_CURRENCY|INVALID_STATUS",
+        "count": 1
+      },
+      {
+        "reason_codes": "INVALID_TRANSACTION_DATE",
+        "count": 1
+      },
+      {
+        "reason_codes": "REQUIRED_CUSTOMER_ID",
+        "count": 1
+      }
+    ]
+  },
+  "dbt": {
+    "normal_build": {
+      "passed": 39,
+      "total": 39,
+      "status": "PASS"
+    },
+    "negative_relationship_case": {
+      "process_exit_code": 1,
+      "status": "EXPECTED_FAILURE_DETECTED",
+      "detected_tests": [
+        "relationships_fct_transactions_customer_key",
+        "relationships_fct_transactions_date_key"
+      ]
+    },
+    "final_repair_build": {
+      "passed": 39,
+      "total": 39,
+      "status": "PASS"
+    }
+  },
+  "github_actions": "PREPARED_NOT_EXECUTED"
+}

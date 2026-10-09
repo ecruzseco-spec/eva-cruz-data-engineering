@@ -1,0 +1,8 @@
+eva_portfolio_analytics:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "{{ env_var('PORTFOLIO_DUCKDB_PATH', '../pipeline/data/portfolio.duckdb') }}"
+      schema: main
+      threads: 4

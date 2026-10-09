@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: curated
+    description: "Capa confiable producida por el pipeline sintético local."
+    schema: curated
+    tables:
+      - name: transactions
+        description: "Última versión aceptada por transaction_id."
+        columns:
+          - name: transaction_id
+            data_tests: [not_null, unique]
+          - name: customer_id
+            data_tests: [not_null]
+          - name: amount
+            data_tests: [not_null]
+          - name: status
+            data_tests:
+              - accepted_values:
+                  arguments:
+                    values: ["COMPLETED", "PENDING", "REFUNDED"]

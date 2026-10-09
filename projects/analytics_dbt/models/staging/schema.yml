@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: stg_transactions
+    description: "Normaliza tipos y nombres sin cambiar la granularidad de una fila por transacción."
+    columns:
+      - name: transaction_id
+        description: "Clave natural sintética de la transacción."
+        data_tests: [not_null, unique]
+      - name: customer_id
+        description: "Clave natural sintética del cliente."
+        data_tests: [not_null]
+      - name: amount
+        description: "Importe positivo en la moneda indicada."
+        data_tests: [not_null]
+      - name: currency
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["MXN", "USD"]
+      - name: status
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ["COMPLETED", "PENDING", "REFUNDED"]
