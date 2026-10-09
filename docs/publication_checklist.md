@@ -26,7 +26,7 @@ Los datos públicos son identificadores ficticios `T1001...T1012`, clientes fict
 ## Configuración propuesta
 
 - Cuenta propietaria confirmada: `ecruzseco-spec`.
-- Repositorio: `eva-cruz-data-engineering-portfolio`.
+- Repositorio: `eva-cruz-data-engineering`.
 - Visibilidad: pública.
 - Descripción: `Portafolio de ingeniería de datos con Python, DuckDB y dbt: pipeline incremental, calidad, idempotencia y modelado analítico con datos sintéticos.`
 - GitHub Pages: rama `main`, carpeta `/docs`.
@@ -64,7 +64,7 @@ git status --short
 
 ## Publicar, solo después de revisar y autorizar
 
-1. Crea en GitHub un repositorio público vacío llamado `eva-cruz-data-engineering-portfolio`; no agregues README remoto.
+1. Crea en GitHub un repositorio público vacío llamado `eva-cruz-data-engineering`; no agregues README remoto.
 2. Revisa otra vez `git status`, `git diff --cached` y `git ls-files`.
 3. Crea el commit y configura el remoto sin incluir tokens en la URL.
 4. Autentícate con Git Credential Manager o `gh auth login` en la interfaz segura; nunca pegues el token en archivos o chat.

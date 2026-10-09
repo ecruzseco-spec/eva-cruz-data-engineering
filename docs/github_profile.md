@@ -23,8 +23,8 @@ Me interesa construir pipelines trazables, modelos confiables y controles que co
 
 ## Portafolio
 
-- [Pipeline incremental y calidad](https://github.com/ecruzseco-spec/eva-cruz-data-engineering-portfolio/tree/main/projects/pipeline)
-- [Modelado analítico con dbt](https://github.com/ecruzseco-spec/eva-cruz-data-engineering-portfolio/tree/main/projects/analytics_dbt)
+- [Pipeline incremental y calidad](https://github.com/ecruzseco-spec/eva-cruz-data-engineering/tree/main/projects/pipeline)
+- [Modelado analítico con dbt](https://github.com/ecruzseco-spec/eva-cruz-data-engineering/tree/main/projects/analytics_dbt)
 
 > Los proyectos del portafolio son demostraciones nuevas con datos sintéticos. No contienen información ni código de empleadores y no se presentan como implementaciones productivas.
 ```
@@ -33,7 +33,7 @@ No agregues teléfono, correo personal ni domicilio al perfil público.
 
 ## Repositorio recomendado
 
-- Nombre: `eva-cruz-data-engineering-portfolio`
+- Nombre: `eva-cruz-data-engineering`
 - Visibilidad: `public`
 - Descripción: `Portafolio de ingeniería de datos con Python, DuckDB y dbt: pipeline incremental, calidad, idempotencia y modelado analítico con datos sintéticos.`
 - Topics: `data-engineering`, `python`, `sql`, `duckdb`, `dbt`, `data-quality`, `etl`, `azure-data-factory`, `databricks`, `synapse`

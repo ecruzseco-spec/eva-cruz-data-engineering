@@ -2,7 +2,7 @@ title: "Eva Cruz Valdovinos | Data Engineering"
 description: "Portafolio reproducible con datos sintéticos: pipelines, calidad, DuckDB y dbt."
 theme: jekyll-theme-minimal
 lang: es-MX
-baseurl: "/eva-cruz-data-engineering-portfolio"
+baseurl: "/eva-cruz-data-engineering"
 exclude:
   - Gemfile
   - Gemfile.lock
