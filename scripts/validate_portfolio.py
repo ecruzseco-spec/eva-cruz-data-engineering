@@ -62,6 +62,21 @@ def parse_pass_total(output: str) -> tuple[int, int]:
     return int(match.group(1)), int(match.group(2))
 
 
+def execution_context() -> dict:
+    """Describe this execution without predicting the final GitHub job result."""
+    if os.environ.get("GITHUB_ACTIONS") == "true":
+        repository = os.environ["GITHUB_REPOSITORY"]
+        run_id = os.environ["GITHUB_RUN_ID"]
+        return {
+            "location": "github_actions",
+            "run_url": f"https://github.com/{repository}/actions/runs/{run_id}",
+            "head_sha": os.environ["GITHUB_SHA"],
+            "run_attempt": os.environ.get("GITHUB_RUN_ATTEMPT", "1"),
+            "workflow_conclusion": "NOT_CHECKED_BY_THIS_SCRIPT",
+        }
+    return {"location": "local", "workflow_conclusion": "NOT_APPLICABLE"}
+
+
 def main() -> None:
     clean_generated_outputs()
     EVIDENCE.mkdir(parents=True, exist_ok=True)
@@ -148,9 +163,17 @@ def main() -> None:
     if pytest_total == 0 or pytest_failures or pytest_errors:
         raise RuntimeError("El resultado JUnit de pytest no confirma una suite aprobada")
     generated_at = datetime.now().astimezone().isoformat(timespec="seconds")
+    execution = execution_context()
+    verified_run = json.loads((EVIDENCE / "github_actions_run.json").read_text(encoding="utf-8"))
+    execution_label = "GitHub Actions" if execution["location"] == "github_actions" else "local"
+    current_run_note = (
+        f"- Run de esta ejecución: {execution['run_url']}, commit `{execution['head_sha']}`; conclusión final del workflow no comprobada por este script."
+        if execution["location"] == "github_actions" else "- Esta ejecución local no constituye un nuevo run remoto."
+    )
     evidence = {
         "generated_at": generated_at,
-        "scope": "Ejecución local sobre datos 100% sintéticos",
+        "scope": f"Ejecución {execution_label} sobre datos 100% sintéticos",
+        "execution": execution,
         "environment": {
             "python": platform.python_version(),
             "duckdb": duckdb.__version__,
@@ -173,7 +196,7 @@ def main() -> None:
             },
             "final_repair_build": {"passed": repair_pass, "total": repair_total, "status": "PASS"},
         },
-        "github_actions": "PREPARED_NOT_EXECUTED",
+        "github_actions": {"verified_historical_run": verified_run},
     }
     (EVIDENCE / "validation_summary.json").write_text(
         json.dumps(evidence, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
@@ -182,7 +205,7 @@ def main() -> None:
         f"| {item['batch_id']} | {item['source_count']} | {item['accepted_count']} | {item['rejected_count']} | {item['amount_difference']} | {item['is_balanced']} |"
         for item in inspection["reconciliations"]
     )
-    markdown = f"""# Evidencia de validación local
+    markdown = f"""# Evidencia de validación ({execution_label})
 
 > Demostración de portafolio con datos 100% sintéticos. No es una implementación productiva.
 
@@ -193,7 +216,11 @@ def main() -> None:
 - dbt normal: **{normal_pass}/{normal_total} aprobados**
 - dbt negativo: **fallo esperado detectado** en las relaciones de cliente y fecha
 - dbt restauración final: **{repair_pass}/{repair_total} aprobados**
-- GitHub Actions: **preparado, todavía no ejecutado en GitHub**
+- Ejecución de estos resultados: **{execution_label}**.
+{current_run_note}
+- GitHub Actions, run histórico comprobado: [{verified_run["run_id"]}]({verified_run["html_url"]}), commit `{verified_run["head_sha"]}`, conclusión **{verified_run["conclusion"]}**; comprobado el {verified_run["verified_at"]}.
+- El run histórico corresponde únicamente a ese commit. Este script no comprueba la conclusión final del workflow en curso ni de ejecuciones futuras.
+- Azure: diseño no desplegado. Airflow: DAG no ejecutado.
 
 ## Resultado del pipeline
 

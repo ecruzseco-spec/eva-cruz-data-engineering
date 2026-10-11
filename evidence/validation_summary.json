@@ -1,16 +1,20 @@
 {
-  "generated_at": "2026-10-08T12:06:10-06:00",
+  "generated_at": "2026-10-10T20:30:49-06:00",
   "scope": "Ejecución local sobre datos 100% sintéticos",
+  "execution": {
+    "location": "local",
+    "workflow_conclusion": "NOT_APPLICABLE"
+  },
   "environment": {
-    "python": "3.12.10",
+    "python": "3.12.14",
     "duckdb": "1.5.6",
     "dbt_core": "1.12.5",
     "operating_system": "Windows",
     "clean_readme_setup": "PASS"
   },
   "pytest": {
-    "passed": 6,
-    "total": 6,
+    "passed": 8,
+    "total": 8,
     "skipped": 0,
     "status": "PASS"
   },
@@ -18,7 +22,7 @@
     "simulated_failure_detected": "SIMULATED_FAILURE_AFTER_VALIDATION",
     "completed_runs": [
       {
-        "run_id": "76aabe5c-1cc8-4c60-9656-6b400e451b9f",
+        "run_id": "458ce684-1e4c-4989-a7aa-775b96d1efd9",
         "batch_id": "batch_001",
         "status": "COMPLETED",
         "source_count": 5,
@@ -30,7 +34,7 @@
         "reconciliation_balanced": true
       },
       {
-        "run_id": "3a45d8ab-b715-4e07-b930-aa7e12bc02f0",
+        "run_id": "40cf43c3-004f-4f6d-8e09-e8c963519f47",
         "batch_id": "batch_002",
         "status": "COMPLETED",
         "source_count": 8,
@@ -42,7 +46,7 @@
         "reconciliation_balanced": true
       },
       {
-        "run_id": "366d9b42-4cfd-433c-944d-28ebb83bf891",
+        "run_id": "4fce8461-0047-480d-91a6-5d8728c15e90",
         "batch_id": "batch_003_recovery",
         "status": "COMPLETED",
         "source_count": 2,
@@ -54,7 +58,7 @@
         "reconciliation_balanced": true
       },
       {
-        "run_id": "e97a8b03-2ae4-48cc-98e0-427a1c125496",
+        "run_id": "f81ead10-1513-4053-a00f-54822d640530",
         "batch_id": "batch_001",
         "status": "SKIPPED_ALREADY_COMPLETED",
         "source_count": 5,
@@ -141,5 +145,15 @@
       "status": "PASS"
     }
   },
-  "github_actions": "PREPARED_NOT_EXECUTED"
+  "github_actions": {
+    "verified_historical_run": {
+      "run_id": 38006360263,
+      "head_sha": "dba664d4ec30f76df06631c0fc5d36489e125f6a",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/ecruzseco-spec/eva-cruz-data-engineering/actions/runs/38006360263",
+      "verified_at": "2026-10-11T02:23:29.3845774Z",
+      "scope": "Synthetic Python/DuckDB/dbt validation only; no Azure deployment or Airflow execution"
+    }
+  }
 }

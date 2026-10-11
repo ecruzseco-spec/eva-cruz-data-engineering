@@ -1,15 +1,19 @@
-# Evidencia de validación local
+# Evidencia de validación (local)
 
 > Demostración de portafolio con datos 100% sintéticos. No es una implementación productiva.
 
-- Fecha: `2026-10-08T12:06:10-06:00`
-- Entorno: Python 3.12.10, DuckDB 1.5.6, dbt-core 1.12.5, Windows
+- Fecha: `2026-10-10T20:30:49-06:00`
+- Entorno: Python 3.12.14, DuckDB 1.5.6, dbt-core 1.12.5, Windows
 - Instalación limpia siguiendo el README: **aprobada**
-- pytest: **6 aprobadas**
+- pytest: **8 aprobadas**
 - dbt normal: **39/39 aprobados**
 - dbt negativo: **fallo esperado detectado** en las relaciones de cliente y fecha
 - dbt restauración final: **39/39 aprobados**
-- GitHub Actions: **validación aprobada el 9 de octubre de 2026**; consulta el historial en la pestaña Actions.
+- Ejecución de estos resultados: **local**.
+- Esta ejecución local no constituye un nuevo run remoto.
+- GitHub Actions, run histórico comprobado: [38006360263](https://github.com/ecruzseco-spec/eva-cruz-data-engineering/actions/runs/38006360263), commit `dba664d4ec30f76df06631c0fc5d36489e125f6a`, conclusión **success**; comprobado el 2026-10-11T02:23:29.3845774Z.
+- El run histórico corresponde únicamente a ese commit. Este script no comprueba la conclusión final del workflow en curso ni de ejecuciones futuras.
+- Azure: diseño no desplegado. Airflow: DAG no ejecutado.
 
 ## Resultado del pipeline
 

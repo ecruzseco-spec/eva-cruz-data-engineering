@@ -1,0 +1,13 @@
+flowchart LR
+    S["Fuentes / archivos"] --> ADF["Azure Data Factory"]
+    ADF --> RAW["ADLS Gen2 / raw"]
+    RAW --> DBX["Azure Databricks + Delta"]
+    DBX --> STG["Delta staging"]
+    STG --> CUR["Delta curated"]
+    CUR --> SYN["Synapse serverless o dedicated"]
+    SYN --> BI["Consumo analítico / Power BI"]
+    ADF --> MON["Azure Monitor / Log Analytics"]
+    DBX --> MON
+    CI["Git + CI/CD"] --> ADF
+    CI --> DBX
+    CI --> SYN

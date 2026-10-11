@@ -1,0 +1,9 @@
+{
+  "run_id": 38006360263,
+  "head_sha": "dba664d4ec30f76df06631c0fc5d36489e125f6a",
+  "status": "completed",
+  "conclusion": "success",
+  "html_url": "https://github.com/ecruzseco-spec/eva-cruz-data-engineering/actions/runs/38006360263",
+  "verified_at": "2026-10-11T02:23:29.3845774Z",
+  "scope": "Synthetic Python/DuckDB/dbt validation only; no Azure deployment or Airflow execution"
+}

@@ -2,21 +2,9 @@
 
 Esta sección es un diseño, no un despliegue. No se crearon recursos ni se generaron cargos.
 
-```mermaid
-flowchart LR
-    S["Fuentes / archivos"] --> ADF["Azure Data Factory"]
-    ADF --> RAW["ADLS Gen2 / raw"]
-    RAW --> DBX["Azure Databricks + Delta"]
-    DBX --> STG["Delta staging"]
-    STG --> CUR["Delta curated"]
-    CUR --> SYN["Synapse serverless o dedicated"]
-    SYN --> BI["Consumo analítico / Power BI"]
-    ADF --> MON["Azure Monitor / Log Analytics"]
-    DBX --> MON
-    CI["Git + CI/CD"] --> ADF
-    CI --> DBX
-    CI --> SYN
-```
+![Diagrama de arquitectura Azure propuesta: fuentes, Data Factory, ADLS, Databricks, capas Delta, Synapse y Power BI; monitoreo y CI/CD.](assets/architecture_azure.svg)
+
+[Ampliar diagrama](assets/architecture_azure.svg) · [Fuente Mermaid](assets/architecture_azure.mmd)
 
 ## Equivalencia de componentes
 

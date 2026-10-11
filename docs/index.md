@@ -5,7 +5,7 @@ title: Portafolio de Data Engineering
 
 # Eva Cruz Valdovinos
 
-**Data Engineer | SQL · Python · PySpark · dbt · Airflow | Azure · AWS · GCP**
+**Data Engineer &#124; SQL · Python · PySpark · dbt · Airflow &#124; Azure · AWS · GCP**
 
 Construyo soluciones de integración, transformación, modelado y calidad de datos con atención a trazabilidad, conciliación y colaboración entre equipos técnicos y de negocio.
 

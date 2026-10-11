@@ -2,7 +2,7 @@
 
 Este es el contenido propuesto para una futura publicación. No se ha publicado todavía.
 
-## Archivos (42)
+## Archivos (46)
 
 ```text
 .github/workflows/ci.yml
@@ -11,12 +11,15 @@ ASSISTANCE.md
 README.md
 docs/_config.yml
 docs/architecture_azure.md
+docs/assets/architecture_azure.mmd
+docs/assets/architecture_azure.svg
 docs/data_dictionary.md
 docs/github_profile.md
 docs/index.md
 docs/interview_guide.md
 docs/public_manifest.md
 docs/publication_checklist.md
+evidence/github_actions_run.json
 evidence/quality_report.html
 evidence/validation_summary.json
 evidence/validation_summary.md
@@ -47,6 +50,7 @@ src/portfolio_pipeline/generator.py
 src/portfolio_pipeline/pipeline.py
 src/portfolio_pipeline/reporting.py
 tests/test_pipeline.py
+tests/test_validation_context.py
 ```
 
 ## Datos públicos
@@ -58,7 +62,7 @@ tests/test_pipeline.py
   - `batch_002`: actualización T1002; T1006; T1007 repetida; T1008-T1011 con errores intencionales.
   - `batch_003_recovery`: actualización T1003 y alta T1012.
 - Clientes ficticios C001-C010, fechas de septiembre de 2026, monedas MXN/USD y valores diseñados para las pruebas.
-- Evidencia: 15 filas raw, 8 transacciones curated por 1312.90, 5 rechazos, una falla simulada recuperada, 6/6 pytest y 39/39 nodos dbt en el estado final.
+- Evidencia: 15 filas raw, 8 transacciones curated por 1312.90, 5 rechazos, una falla simulada recuperada, 8/8 pytest y 39/39 nodos dbt en el estado final.
 - Identificadores UUID de las ejecuciones locales; no identifican a personas ni sistemas externos.
 
 ## Información que no está incluida

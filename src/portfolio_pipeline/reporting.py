@@ -55,7 +55,7 @@ th{{background:#12355b;color:#fff}} tbody tr:nth-child(even){{background:#f6f8fa
 </style></head><body>
 <h1>Reporte de calidad del pipeline</h1>
 <p class="notice"><strong>Demostración de portafolio.</strong> Todos los datos son sintéticos. No representa una implementación productiva.</p>
-<p>Generado por una ejecución local real: <code>{html.escape(generated_at)}</code>.</p>
+<p>Generado por una ejecución real de la demostración: <code>{html.escape(generated_at)}</code>.</p>
 <div class="cards">
   <div class="card"><div>Registros curated</div><div class="value">{curated[0]}</div></div>
   <div class="card"><div>Importe curated</div><div class="value">{curated[1]}</div></div>
